@@ -1,6 +1,6 @@
 // include guards 
 #include <iostream>
-#include "library.h" 
+// #include "library.h" 
 
 using namespace std; 
 
@@ -9,7 +9,7 @@ int main()
 { 
 
 // declare variables 
-char userInput
+char userInput; 
 
 // begin program
 cout << "Welcome to our program!" << endl; 
@@ -19,7 +19,7 @@ cout << "Below is a menu: \nPlease select your program options from below " << e
 cout << "q: quit program \n e: exposure model \ns: severity model \nt: testing model" << endl; 
 
 // user selects choice from the menu
-cin >> userInput >> endl; 
+cin >> userInput; 
 
 // converts userInput variable to lowercase to prevent case sensitivity 
 tolower(userInput); 
@@ -29,29 +29,34 @@ while (userInput != 'q')
 {
 // body of while loop here 
 	// series of switch statments 
-	case e: 
+	switch (userInput) 
+	{
+		case 'e': 
 	{
 		cout << "You have selected the exposure model" << endl; 
+		break; 
 	}
-
-	case s: 
+		case 's': 
 	{
 		cout << "You have selected the severity model" << endl; 
+		break; 
 	}
 
-	case t: 
+		case 't': 
 	{ 
 		cout << "You have selected the testing model" << endl; 
+		break; 
 	}
 
-	default: 
+		default: 
 	{
 		cout << "Error! Invalid character! \nPlease select a valid character..." << endl; 
 		// print menu -- possibly make this a function 
 		cout << "q: quit program \n e: exposure model \ns: severity model \nt: testing model" << endl; 
 	}
+	} 
 cout << "Please select a program option" << endl; 
-cin >> userInput >> endl; // resets program 
+cin >> userInput;  // resets program 
 }
 return 0; // quit program 
 } 
