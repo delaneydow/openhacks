@@ -1,5 +1,5 @@
-#ifndef lib_h
-#define lib_h
+#ifndef LIB_H
+#define LIB_H
 #include <string>
 
 class Exposure{
