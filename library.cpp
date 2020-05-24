@@ -266,13 +266,36 @@ double Analysis::dangerAnalysis(){
     return dangerResult; 
 }
 
-double Analysis::testAnalysis(){
-    /*
-    double Test::getIndustry() // returns b6
-    */ 
-
-    double testResult = 1.0; 
-    return testResult; 
+double Analysis::testAnalysis(char industry, unsinged int age){
     
-
+    // uses age data and industry data 
+    double testResult;
+    // access industry data 
+    if (industry == 'y') 
+    {
+        testResult = 4.0; 
+    }
+    else if (industry == 'n') 
+    {
+       if (age <= 20) 
+       {
+        testResult = 0.5; 
+       } 
+       else if (age > 20 && age <= 40) 
+       {
+        testResult = 1.0; 
+       }
+       else if (age > 40 && age <= 60)
+       {
+        testResult = 1.5; 
+       }
+       else if (age > 60)
+       {
+        testResult = 3.0; 
+       }
+    } 
+    else 
+        testResult = 0.0; 
+    
+    return testResult;    
 }
