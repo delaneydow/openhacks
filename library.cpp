@@ -95,6 +95,27 @@ double Exposure:: livingConditions(char living){
 return b2; 
 }
 
+// getter functions for Exposure class 
+double Exposure::getLocation()
+{
+    // return determined value from curl 
+}
+
+double Exposure::getInteractions()
+{
+    return k; 
+}
+
+double Exposure::getPrecautions() 
+{
+    return b1; 
+}
+
+double Exposure::getLiving() 
+{
+    return b2; 
+}
+
 
 // implementation of Danger class 
 
@@ -149,6 +170,22 @@ double Danger::medicalConditions(){
     // this is funky because i haven't even determine conditions in main yet 
     // tbd but will be a b5 value 
     double b5; 
+    return b5; 
+}
+
+// getters for danger 
+double Danger::getAge() 
+{
+    return b3; 
+}
+
+char Danger::getGender() 
+{
+    return b4; 
+}
+
+double Danger::getConditions()
+{
     return b5; 
 }
 
