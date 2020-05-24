@@ -151,7 +151,7 @@ double Danger::Age(unsigned int age) {
 }       
 
 // effects probability of being infected 
-double Danger::Gender(){
+double Danger::Gender(char gender){
     // declare output value 
     double b4; 
     if (gender == 'f') 
@@ -167,7 +167,8 @@ double Danger::Gender(){
 }
 
 // effects probability of being infected 
-double Danger::medicalConditions(){
+double Danger::medicalConditions(string conditions){
+    string condition_list[10] = {}]
     // this is funky because i haven't even determine conditions in main yet 
     // tbd but will be a b5 value 
     double b5; 
