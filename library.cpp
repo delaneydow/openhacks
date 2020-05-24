@@ -1,11 +1,14 @@
 #include library.h
 #include <iostream>
+#include <fstream>
+#include <curl/curl.h>
+#include <iomanip> //for setprecision function
+
 using namespace std;
 
+double Exposure::location(string location){
 
-// implementation of Exposure class 
-void Exposure::location(string location){
-
+//need to take the users location and search for the state in the curl return data file with a for loop
     CURL *curl;
     CURLcode res;
     string readBuffer;
@@ -20,67 +23,36 @@ void Exposure::location(string location){
 
         cout << readBuffer << endl;
     }
+//when the for loop returns a location::
+
+
   return 0;
 }
 
 
-void Exposure:: outsideHouse(){
 
-
-}
-
-void Exposure:: interactions(){
-
-
-
-}
-
-void Exposure:: precautions(){
-
-
-
-}
-void Exposure:: livingConditions(){
-
-
-
-}
-
-void Exposure:: caseNumber() {
-
-}
-void Exposure::spreadRate() {
-
-}
-
-
-// implementation of Danger class 
-void Danger::Age() {
-
-}
-
-void Danger::Gender(){
-
-}
-
-void Danger::medicalConditions(){
-
-}
-
-// implementation of Test class 
-void Test::industry(){
-
-}
-
-// implementation of Analysis class 
-void Analysis::exposureAnalysis() {
-
-}
-
-void Analysis::dangerAnalysis(){
-
-}
-
-void Analysis::testAnalysis(){
+double Exposure::interactions(unsigned int hours, unsigned int interactions){
+    double out_of_house =  hours / interactions;  
     
+    return out_of_house;
 }
+
+double Exposure:: precautions(char ){
+
+
+
+}
+double Exposure:: livingConditions(char ){
+
+
+
+}
+
+double Exposure::
+double Exposure::
+double Exposure::
+double Exposure::
+
+double Danger:: 
+void Danger::
+void Danger:: 
