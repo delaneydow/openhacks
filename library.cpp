@@ -9,7 +9,7 @@ using namespace std;
 double Exposure::location(string location){
 
 //need to take the users location and search for the state in the curl return data file with a for loop
-    CURL *curl;
+   /* CURL *curl;
     CURLcode res;
     string readBuffer;
 
@@ -23,7 +23,7 @@ double Exposure::location(string location){
 
         cout << readBuffer << endl;
     }
-//when the for loop returns a location::
+//when the for loop returns a location:: */ 
 
 
   return 0;
@@ -43,14 +43,14 @@ double Exposure::spreadRate() {
 // returns value to be used in analysis class
     // based on # of hours spent outside the house 
     // output is k = "average number of daily exposures of the latent"
-double Exposure::interactions(unsigned int hours, unsigned int interactions){
+double Exposure::Interactions(unsigned int hours, unsigned int interactions){
     double k =  (double) hours / interactions;  // cast to be type double   
     return k;
 }
 
 // based on precautionary measures user enters 
 // taking precautionary measures reduced rate of infection 
-double Exposure:: precautions(char precautions){
+double Exposure::Precautions(char precautions){
     // declare output variable
     double b1; // a factor that could increase or decrease probability of infection
 // selects options of precautions inputted by user 
@@ -120,11 +120,12 @@ double Exposure::getLiving()
 // implementation of Danger class 
 
     // implement danger object 
-    Danger::Danger()
+    // Danger::Danger();   // needs exception ...?
+
 // effects probability of being infected 
 double Danger::Age(unsigned int age) {
 // declare output variable 
-    double Danger::getAge()
+    // double Danger::getAge(); // don't think you need this 
     double b3; 
     if (age >= 0 && age <= 20) // children & adolescents 
     {
@@ -167,12 +168,10 @@ double Danger::Gender(char gender){
 }
 
 // effects probability of being infected 
-double Danger::medicalConditions(string conditions){
+double Danger::medicalConditions(char conditions){
     double b5; // creates return value
     // set comparison 
-    string comp = "yes" 
-        bool comped = strcmp(comp, conditions); // assign to boolean value
-        if (comped == true) // strings are equal, condition is present 
+        if (conditions == 'y') // health condition is present  
         {
             // b5 = xxxx; // set value 
         }   
@@ -185,7 +184,7 @@ double Danger::getAge()
     return b3; 
 }
 
-char Danger::getGender() 
+double Danger::getGender() 
 {
     return b4; 
 }
@@ -197,9 +196,9 @@ double Danger::getConditions()
 
 // implementation of Test class 
     // initialize test object 
-    Test::Test() 
+    // Test::Test() ; 
 
-double Test::industry()
+double Test::Industry(char industry)
 {
     double b6 = 1.0;
     // double Test::getindustry() { // don't think you'd need a getter since test class can access data within its class
@@ -207,7 +206,7 @@ double Test::industry()
         b6 *= .116; // this is how much more likely front line workers are compared to normal people
     }
     else{
-        b6 *=.01
+        b6 *=.01; 
     }
         
     return b6; // exits function 
@@ -219,10 +218,12 @@ double Test::getIndustry()
 } 
 
 // implementation of Analysis class 
-    // initialize analysis object 
-    Analysis::Analysis() 
-void Analysis::exposureAnalysis() {
-    double Exposure::getlocation()
+    // initialize default constructor
+    // Analysis::Analysis() ; 
+
+double Analysis::exposureAnalysis() {
+
+/*double Exposure::getlocation()
     double Exposure::getoutsideHouse()
     double Exposure::getinteractions() // returns k 
     double Exposure::getPrecautions() // returns b1
@@ -230,16 +231,35 @@ void Analysis::exposureAnalysis() {
     double Exposure::caseNumber()
     double Exposure::spreadRate()
 
+*/ 
+   // double test = Exposure.k; 
+
+   double exposureResult = 1.0; 
+    
+    return exposureResult; 
+
+
 }
 
-void Analysis::dangerAnalysis(){
+
+
+double Analysis::dangerAnalysis(){
+    /*
     double Danger:getAge() // return b3
     double Danger:getGender() // return b4
     double Danger:getConditions() // return b5
-
+    */ 
+    double dangerResult = 1.0; 
+    return dangerResult; 
 }
 
-void Analysis::testAnalysis(){
+double Analysis::testAnalysis(){
+    /*
     double Test::getIndustry() // returns b6
+    */ 
+
+    double testResult = 1.0; 
+    return testResult; 
+    
 
 }

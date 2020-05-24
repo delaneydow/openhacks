@@ -11,8 +11,8 @@ class Exposure{
         double location(std::string state); 
             // takes location from state abbreviation
         double outsideHouse(double hours); //will be a double, and will take in both hours and minutes, perhaps seconds
-        double interactions(unsigned int interactions); //asking the user how many interactions he/she has had
-        double precautions(char precautions); //asking the user about mask wearing, time spent social distancing
+        double Interactions(unsigned int hours, unsigned int interactions); //asking the user how many interactions he/she has had
+        double Precautions(char precautions); //asking the user about mask wearing, time spent social distancing
         double livingConditions(char living); //asking the user where he she lives
         double k, b1, b2; 
     public:
@@ -29,6 +29,7 @@ class Exposure{
         double getInteractions(); 
         double getPrecautions(); 
         double getLiving(); 
+        friend class Analysis;  // can access private members
 
 };
 
@@ -39,11 +40,16 @@ class Danger{
     double getGender(); 
     double getConditions(); 
 
+    // make friend class and function 
+        friend class Analysis; // can access private members
+
     private:
-        double age(unsigned int age); //will return the users age in format : You are x years and y months old
-        double gender(char gender);  
-        double medicalConditions(string conditions); //asks the user about previous medical conditions, returns input
+        double Age(unsigned int age); //will return the users age in format : You are x years and y months old
+        double Gender(char gender);  
+        double medicalConditions(char conditions); //asks the user about previous medical conditions, returns input
         double b3, b4, b5; 
+        
+         
 };      
 
 // added class Test for third prediction option 
@@ -53,9 +59,14 @@ class Test{
 public: 
     Test(); // default constructor 
     double getIndustry(); 
+
+    friend class Analysis; // can access private members
+
+
 private: 
-    double industry(char industry); // returns risk of working in an industry that is high risk 
+    double Industry(char industry); // returns risk of working in an industry that is high risk 
     double b6; // output of industry function; 
+    
 }; 
 
 // analysis class to sort all data inputted from user 
@@ -65,9 +76,9 @@ class Analysis {
 public: 
     Analysis(); // default constructor 
     // input types of these functions needs to be determined 
-    double exposureAnalysis(); 
-    double dangerAnalysis(); 
-    double testAnalysis(); 
+    static double exposureAnalysis(); 
+    static double dangerAnalysis(); 
+    static double testAnalysis(); 
 
 }; 
 
