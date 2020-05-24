@@ -17,6 +17,7 @@ class Exposure{
         double k, b1, b2; 
     public:
         Exposure(); // default constructor 
+        ~Exposure(); // destructor 
     
         double caseNumber(); //taken from google/ open source info
             // need to determine what the input type is going to be 
@@ -36,6 +37,8 @@ class Exposure{
 class Danger{
 // add getters and setters as necessary to access private members from Danger class 
     public: 
+    Danger(); //default constructor 
+    ~Danger(); //destructor 
     double getAge(); 
     double getGender(); 
     double getConditions(); 
@@ -58,6 +61,7 @@ class Test{
 // add getters and setters as necessary for analysis class to access private members from Test class 
 public: 
     Test(); // default constructor 
+    ~Test(); //destructor 
     double getIndustry(); 
 
     friend class Analysis; // can access private members
@@ -75,6 +79,7 @@ private:
 class Analysis {
 public: 
     Analysis(); // default constructor 
+    ~Analysis(); //destructor 
     // input types of these functions needs to be determined 
     static double exposureAnalysis(); 
     static double dangerAnalysis(); 
