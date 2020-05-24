@@ -195,10 +195,13 @@ double Danger::getConditions()
     Test::Test() 
 
 void Test::industry(){
-    double b6;
+    double b6 = 1.0;
     double Test::getindustry()
     if(industry == 'y'){
-
+        b6 *= .116; // this is how much more likely front line workers are compared to normal people
+    }
+    else{
+        b6 *=.01
     }
     return b6;
 }
