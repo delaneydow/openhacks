@@ -78,7 +78,7 @@ public:
     // input types of these functions needs to be determined 
     static double exposureAnalysis(); 
     static double dangerAnalysis(); 
-    static double testAnalysis(); 
+    static double testAnalysis(char industry, unsigned int age); 
 
 }; 
 
