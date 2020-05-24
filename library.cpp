@@ -103,6 +103,7 @@ return b2;
 // effects probability of being infected 
 double Danger::Age(unsigned int age) {
 // declare output variable 
+    double Danger::getAge()
     double b3; 
     if (age >= 0 && age <= 20) // children & adolescents 
     {
@@ -126,7 +127,7 @@ double Danger::Age(unsigned int age) {
         // b3 = xxx; // assign value 
     }
     return b3; 
-}        
+}       
 
 // effects probability of being infected 
 double Danger::Gender(){
@@ -157,17 +158,32 @@ double Danger::medicalConditions(){
     Test::Test() 
 
 void Test::industry(){
+    double b6;
+    double Test::getindustry()
+    if(industry == 'y'){
 
+    }
+    return b6;
 }
 
 // implementation of Analysis class 
     // initialize analysis object 
     Analysis::Analysis() 
 void Analysis::exposureAnalysis() {
+    double Exposure::getlocation()
+    double Exposure::getoutsideHouse()
+    double Exposure::getinteractions()
+    double Exposure::getprecautions()
+    double Exposure::getlivingConditions()
+    double Exposure::caseNumber()
+    double Exposure::livingConditions()
 
 }
 
 void Analysis::dangerAnalysis(){
+    double Danger:getage()
+    double Danger:getgender()
+    double Danger:getmedicalConditions()
 
 }
 
