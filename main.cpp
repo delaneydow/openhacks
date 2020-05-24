@@ -13,9 +13,9 @@ int main()
 { 
 
 // declare variables 
-char userInput, gender, protections, living, industry; 
+char userInput, gender, protections, living, industry, conditions; 
 unsigned int interactions, age, hours; 
-string state, conditions; 
+string state; 
 
 // begin program
 cout << "Welcome to our program!" << endl; 
@@ -109,20 +109,20 @@ while (userInput != 'q')
 		for(int i = 0; i < sizeof(condition_list)/ sizeof(condition_list[0]) ; i++){
 			cout << condition_list[i] << "\n";
 		}
-			cout <<"If you have any type of these medical conditions\nPlease type yes or no\n" << endl; 
+			cout <<"If you have any type of these medical conditions\nPlease type y for yes or n for no\n" << endl; 
 			
 			cin >> conditions; 
 			//error checking, make coditions string all lowercase 
-		transform(state.begin(), state.end(), state.begin(), ::tolower);
+		tolower(conditions); 
 		
-		while(conditions[0] != "yes" || conditions[0] != "no")
+		while(conditions != 'y' || conditions != 'n')
 		{
 			//this error check needs to be fixed. 
 			cout << "Please enter yes or no.\n";
 			cin >> conditions;
 			
 			//error checking, make coditions string all lowercase 
-		transform(state.begin(), state.end(), state.begin(), ::tolower);
+		tolower(conditions); 
 		}
 
 		// invoke library to deal with severity model 
@@ -146,7 +146,7 @@ while (userInput != 'q')
 		cin >> industry; 
 		tolower(industry); 
 		// error checking 
-		while (industry != 'y' || industry != 'n') 
+		if (industry != 'y' || industry != 'n') 
 		{
 			cout << "Invalid character! Enter y for yes or n for no." << endl; 
 			cin >> industry; 
@@ -174,7 +174,7 @@ while (userInput != 'q')
 		{
 			cout << "Thank you for selecting the exposure model" << endl; 
 			cout << "The likelihood of you being exposed to covid-19 is..." << endl; // take results from calculations
-
+			Analysis::exposureAnalysis(); 
 
 			break; 
 		}
@@ -185,6 +185,7 @@ while (userInput != 'q')
 			cout << "The likelihood of your case being asymptomatic is..." << endl; // results from calculations
 			cout << "The likelihood that your case would be critical or sever is...." << endl; // results from calculations
 			
+			Analysis::dangerAnalysis(); 
 			break; 
 		}
 
@@ -192,6 +193,7 @@ while (userInput != 'q')
 		{
 			cout << "Thank you for selecting the testing model" << endl; 
 			cout << "You should be tested for covid-19 apprximately ____ times per week" << endl; // results from calculations
+			Analysis::testAnalysis(); 
 			break; 
 		}
 		default: 
