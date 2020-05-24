@@ -172,28 +172,30 @@ while (userInput != 'q')
 	{
 		case 'e': 
 		{
+			double eResult = Analysis::exposureAnalysis();
 			cout << "Thank you for selecting the exposure model" << endl; 
-			cout << "The likelihood of you being exposed to covid-19 is..." << endl; // take results from calculations
-			Analysis::exposureAnalysis(); 
+			cout << "The likelihood of you being exposed to covid-19 is..." << eResult << endl; // take results from calculations
 
 			break; 
 		}
 
 		case 's': 
 		{
+			double sResult = Analysis::dangerAnalysis(); 
 			cout << "Thank you for selecting the severity model" << endl; 
-			cout << "The likelihood of your case being asymptomatic is..." << endl; // results from calculations
-			cout << "The likelihood that your case would be critical or sever is...." << endl; // results from calculations
+			// cout << "The likelihood of your case being asymptomatic is..." << endl; // results from calculations
+			cout << "The likelihood that your case would be critical or severe is...." << sResult << endl; // results from calculations
 			
-			Analysis::dangerAnalysis(); 
+			
 			break; 
 		}
 
 		case 't': 
 		{
+			double tResult = Analysis::testAnalysis(industry, age);
 			cout << "Thank you for selecting the testing model" << endl; 
-			cout << "You should be tested for covid-19 apprximately ____ times per week" << endl; // results from calculations
-			Analysis::testAnalysis(); 
+			cout << "You should be tested for covid-19 apprximately << tResult << times per week" << endl; // results from calculations
+
 			break; 
 		}
 		default: 
