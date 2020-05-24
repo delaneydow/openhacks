@@ -48,9 +48,9 @@ private:
 class Analysis {
 public: 
     // input types of these functions needs to be determined 
-    double ExposureAnalysis(); 
-    double DangerAnalysis(); 
-    double TestAnalysis(); 
+    double exposureAnalysis(); 
+    double dangerAnalysis(); 
+    double testAnalysis(); 
 
 }; 
 
