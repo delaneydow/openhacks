@@ -32,27 +32,95 @@ double Exposure::location(string location){
 
 
 double Exposure::interactions(unsigned int hours, unsigned int interactions){
-    double out_of_house =  hours / interactions;  
+    double k =  (double) hours / interactions;  // cast to be type double 
     
-    return out_of_house;
+    return k;
 }
 
-double Exposure:: precautions(char ){
+// based on precautionary measures user enters 
+// taking precautionary measures reduced rate of infection 
+double Exposure:: precautions(char precautions){
+    // declare output variable
+    double b1; // a factor that could increase or decrease probability of infection
+// selects options of precautions inputted by user 
+    //outputs percentage of transmission this would decrease b 
+    // b is probability of being infected, with 1.0 being guaranteed infection 
+    if (precautions == 'a') // wearing a mask
+    {
+       // b1 = xxxx; // add value
+    } 
+    else if (precautions == 'x') // social distancing
+    {
+       // b1 = xxxx; // add value
+    }
+    else if (precautions == 'u') // quarantined 
+    {
+        // b1= xxx; // add value 
+    }
+    else 
+       // b1 = 1.0; // no precautions are taking, assumed probability of 100% 
+return b1; 
+}
+    // based on environment user lives in 
+// higher densities increase rates of infection 
+double Exposure:: livingConditions(char living){
+// declare output variable 
+    double b2; // factor that could increase or decrease probability of infection 
+    if (living == 'p') // aparment, city 
+    {
+        // b2 = xxx; 
+    }
+    else if (living == 'b') // suburban area
+    {
+        // b2 = xxx; 
+    }
+    else if (living == 'r') // rural area
+    {
+        // b2 = xxx; 
+    }
+    else 
+        cout << "error, invalid character entered" << endl; 
+
+return b2; 
+}
 
 
+// implementation of Danger class 
+
+    // implement danger object 
+    Danger::Danger()
+        
+void Danger::Age() {
 
 }
-double Exposure:: livingConditions(char ){
 
-
+void Danger::Gender(){
 
 }
 
-double Exposure::
-double Exposure::
-double Exposure::
-double Exposure::
+void Danger::medicalConditions(){
 
-double Danger:: 
-void Danger::
-void Danger:: 
+}
+
+// implementation of Test class 
+    // initialize test object 
+    Test::Test() 
+
+void Test::industry(){
+
+}
+
+// implementation of Analysis class 
+    // initialize analysis object 
+    Analysis::Analysis() 
+void Analysis::exposureAnalysis() {
+
+}
+
+void Analysis::dangerAnalysis(){
+
+}
+
+void Analysis::testAnalysis(){
+
+}
