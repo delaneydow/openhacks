@@ -29,11 +29,22 @@ double Exposure::location(string location){
   return 0;
 }
 
+// from data 
+double Exposure::caseNumber() {
 
+}
 
+// from data 
+double Exposure::spreadRate() {
+
+}
+
+// based on # of interactions with people per day 
+// returns value to be used in analysis class
+    // based on # of hours spent outside the house 
+    // output is k = "average number of daily exposures of the latent"
 double Exposure::interactions(unsigned int hours, unsigned int interactions){
-    double k =  (double) hours / interactions;  // cast to be type double 
-    
+    double k =  (double) hours / interactions;  // cast to be type double   
     return k;
 }
 
@@ -89,17 +100,56 @@ return b2;
 
     // implement danger object 
     Danger::Danger()
-        
-void Danger::Age() {
+// effects probability of being infected 
+double Danger::Age(unsigned int age) {
+// declare output variable 
+    double b3; 
+    if (age >= 0 && age <= 20) // children & adolescents 
+    {
+       // b3 = xxx; // assign value  
+    }
+    else if (age > 20 && age <= 30) // young adults 
+    {
+        // b3 = xxx; // assign value 
+    }
+    else if (age > 30 && age <= 60) // middle age
+    {
+        // b3 = xxx; // assign value 
+    }
+    else if (age > 60 && age >= 80) // elderly 
+    {
+        // b3 = xxx; // assign value 
+    }
+    else 
+    {
+        // assumes age is over 80, very old 
+        // b3 = xxx; // assign value 
+    }
+    return b3; 
+}        
 
+// effects probability of being infected 
+double Danger::Gender(){
+    // declare output value 
+    double b4; 
+    if (gender == 'f') 
+    {
+        // b4 = xxxx; // set value
+    }
+    else
+    {
+        // assume value is 'm' because of error checking 
+        //b4 = xxx; // set value 
+    }
+    return b4; 
 }
 
-void Danger::Gender(){
-
-}
-
-void Danger::medicalConditions(){
-
+// effects probability of being infected 
+double Danger::medicalConditions(){
+    // this is funky because i haven't even determine conditions in main yet 
+    // tbd but will be a b5 value 
+    double b5; 
+    return b5; 
 }
 
 // implementation of Test class 
