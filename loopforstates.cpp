@@ -226,6 +226,7 @@ int main()
 
         case 50:
             rate = 1405;
+            cout << "This is a test" << endl;
             break;
         
 
