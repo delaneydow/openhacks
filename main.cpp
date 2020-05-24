@@ -104,15 +104,19 @@ while (userInput != 'q')
 			cin >> gender; 
 			tolower(gender); 
 		}
-		string condition_list[8] = {"chronic lung disease", "asthma", "heart conditions", "immune deficiencies", 
-		"obesity", "diabetes", "chronic kidney disease", "liver disease"};
-		for(int i = 0; i < 8 ; i++){
-			cout << condition_list[i] << "\t";
+    	string conditions;
+    	string condition_list[8] = {"Chronic lung disease", "Asthma", "Heart conditions", "Immune Deficiencies", 
+		"Obesity", "Diabetes", "Chronic kidney disease", "Liver disease"};
+		for(int i = 0; i < sizeof(condition_list)/ sizeof(condition_list[0]) ; i++){
+			cout << condition_list[i] << "\n";
 		}
-		cout << endl;
-		cout <<"Enter any underlying medical conditions that you have" << endl; 
-		cin >> conditions; 
-		tolower(conditions)
+			cout <<"If you have any type of these medical conditions\nPlease type yes or no\n" << endl; 
+
+		while(conditions[0] != 'y' || conditions[0] != 'n'){
+			//this error check needs to be fixed. 
+			cout << "Please enter yes or no.\n";
+			cin >> conditions;
+
 		// invoke library to deal with severity model 
 		break; 
 	}
