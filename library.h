@@ -16,6 +16,8 @@ class Exposure{
         double livingConditions(char living); //asking the user where he she lives
         double k, b1, b2; 
     public:
+        Exposure(); // default constructor 
+    
         double caseNumber(); //taken from google/ open source info
             // need to determine what the input type is going to be 
         double spreadRate(); //taken from google 
@@ -23,10 +25,19 @@ class Exposure{
 
 
         // add getters and setters as necessary for analysis class to access private members from Exposure class 
+        double getLocation(); 
+        double getInteractions(); 
+        double getPrecautions(); 
+        double getLiving(); 
+
 };
+
 class Danger{
 // add getters and setters as necessary to access private members from Danger class 
     public: 
+    double getAge(); 
+    double getGender(); 
+    double getConditions(); 
 
     private:
         double age(unsigned int age); //will return the users age in format : You are x years and y months old
