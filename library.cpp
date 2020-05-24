@@ -2,6 +2,8 @@
 #include <iostream>
 using namespace std;
 
+
+// implementation of Exposure class 
 void Exposure::location(string location){
 
     CURL *curl;
@@ -44,8 +46,41 @@ void Exposure:: livingConditions(){
 
 }
 
-void Exposure::
-void Exposure::
-void Exposure::
-void Exposure::
+void Exposure:: caseNumber() {
 
+}
+void Exposure::spreadRate() {
+
+}
+
+
+// implementation of Danger class 
+void Danger::Age() {
+
+}
+
+void Danger::Gender(){
+
+}
+
+void Danger::medicalConditions(){
+
+}
+
+// implementation of Test class 
+void Test::industry(){
+
+}
+
+// implementation of Analysis class 
+void Analysis::exposureAnalysis() {
+
+}
+
+void Analysis::dangerAnalysis(){
+
+}
+
+void Analysis::testAnalysis(){
+    
+}
