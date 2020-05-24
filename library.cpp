@@ -168,10 +168,14 @@ double Danger::Gender(char gender){
 
 // effects probability of being infected 
 double Danger::medicalConditions(string conditions){
-    string condition_list[10] = {}]
-    // this is funky because i haven't even determine conditions in main yet 
-    // tbd but will be a b5 value 
-    double b5; 
+    double b5; // creates return value
+    // set comparison 
+    string comp = "yes" 
+        bool comped = strcmp(comp, conditions); // assign to boolean value
+        if (comped == true) // strings are equal, condition is present 
+        {
+            // b5 = xxxx; // set value 
+        }   
     return b5; 
 }
 
@@ -195,17 +199,24 @@ double Danger::getConditions()
     // initialize test object 
     Test::Test() 
 
-void Test::industry(){
+double Test::industry()
+{
     double b6 = 1.0;
-    double Test::getindustry()
+    // double Test::getindustry() { // don't think you'd need a getter since test class can access data within its class
     if(industry == 'y'){
         b6 *= .116; // this is how much more likely front line workers are compared to normal people
     }
     else{
         b6 *=.01
     }
-    return b6;
+        
+    return b6; // exits function 
 }
+
+double Test::getIndustry()
+{
+    return b6;
+} 
 
 // implementation of Analysis class 
     // initialize analysis object 
@@ -213,21 +224,22 @@ void Test::industry(){
 void Analysis::exposureAnalysis() {
     double Exposure::getlocation()
     double Exposure::getoutsideHouse()
-    double Exposure::getinteractions()
-    double Exposure::getprecautions()
-    double Exposure::getlivingConditions()
+    double Exposure::getinteractions() // returns k 
+    double Exposure::getPrecautions() // returns b1
+    double Exposure::getLiving() // returns b2
     double Exposure::caseNumber()
-    double Exposure::livingConditions()
+    double Exposure::spreadRate()
 
 }
 
 void Analysis::dangerAnalysis(){
-    double Danger:getage()
-    double Danger:getgender()
-    double Danger:getmedicalConditions()
+    double Danger:getAge() // return b3
+    double Danger:getGender() // return b4
+    double Danger:getConditions() // return b5
 
 }
 
 void Analysis::testAnalysis(){
+    double Test::getIndustry() // returns b6
 
 }
