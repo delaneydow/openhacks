@@ -81,8 +81,8 @@ public:
     Analysis(); // default constructor 
     ~Analysis(); //destructor 
     // input types of these functions needs to be determined 
-    static double exposureAnalysis(); 
-    static double dangerAnalysis(); 
+    static double exposureAnalysis(char precautions, char living); 
+    static double dangerAnalysis(unsigned int age, char gender, char conditions); 
     static double testAnalysis(char industry, unsigned int age); 
 
 }; 
