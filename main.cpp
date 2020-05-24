@@ -172,7 +172,7 @@ while (userInput != 'q')
 	{
 		case 'e': 
 		{
-			double eResult = Analysis::exposureAnalysis();
+			double eResult = Analysis::exposureAnalysis(precuations, living);
 			cout << "Thank you for selecting the exposure model" << endl; 
 			cout << "The likelihood of you being exposed to covid-19 is..." << eResult << endl; // take results from calculations
 
@@ -181,7 +181,7 @@ while (userInput != 'q')
 
 		case 's': 
 		{
-			double sResult = Analysis::dangerAnalysis(); 
+			double sResult = Analysis::dangerAnalysis(age, gender, conditions); 
 			cout << "Thank you for selecting the severity model" << endl; 
 			// cout << "The likelihood of your case being asymptomatic is..." << endl; // results from calculations
 			cout << "The likelihood that your case would be critical or severe is...." << sResult << endl; // results from calculations
