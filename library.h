@@ -14,6 +14,7 @@ class Exposure{
         double interactions(unsigned int interactions); //asking the user how many interactions he/she has had
         double precautions(char precautions); //asking the user about mask wearing, time spent social distancing
         double livingConditions(char living); //asking the user where he she lives
+        double k, b1, b2; 
     public:
         double caseNumber(); //taken from google/ open source info
             // need to determine what the input type is going to be 
@@ -31,7 +32,7 @@ class Danger{
         double age(unsigned int age); //will return the users age in format : You are x years and y months old
         double gender(char gender);  
         double medicalConditions(string conditions); //asks the user about previous medical conditions, returns input
-        
+        double b3, b4, b5; 
 };      
 
 // added class Test for third prediction option 
@@ -39,9 +40,11 @@ class Danger{
 class Test{
 // add getters and setters as necessary for analysis class to access private members from Test class 
 public: 
+    Test(); // default constructor 
+    double getIndustry(); 
 private: 
     double industry(char industry); // returns risk of working in an industry that is high risk 
-
+    double b6; // output of industry function; 
 }; 
 
 // analysis class to sort all data inputted from user 
@@ -49,6 +52,7 @@ private:
 // results in predictions and data analysis that is then reported back to the user 
 class Analysis {
 public: 
+    Analysis(); // default constructor 
     // input types of these functions needs to be determined 
     double exposureAnalysis(); 
     double dangerAnalysis(); 
