@@ -58,17 +58,21 @@ double Exposure::Precautions(char precautions){
     // b is probability of being infected, with 1.0 being guaranteed infection 
     if (precautions == 'a') // wearing a mask
     {
+        b1 = 0.33; //one third assuming other user is wearing a mask
        // b1 = xxxx; // add value
     } 
     else if (precautions == 'x') // social distancing
     {
+        b1 = 0.15; //very low, for obvious reasons , but a bit high to integrate inaccuracies 
        // b1 = xxxx; // add value
     }
     else if (precautions == 'u') // quarantined 
     {
+        b1 = 0.5; //not zero, because of contact with other people i.e. grocery store delivries
         // b1= xxx; // add value 
     }
     else 
+        b1 = 0.99;
        // b1 = 1.0; // no precautions are taking, assumed probability of 100% 
 return b1; 
 }
@@ -79,14 +83,17 @@ double Exposure:: livingConditions(char living){
     double b2; // factor that could increase or decrease probability of infection 
     if (living == 'p') // aparment, city 
     {
+        b2 = 0.40; // citizens living in urban areas have a 2x higher death rate, thus 
         // b2 = xxx; 
     }
     else if (living == 'b') // suburban area
     {
+        b2 = 0.20;
         // b2 = xxx; 
     }
     else if (living == 'r') // rural area
     {
+        b2 = 0.10;
         // b2 = xxx; 
     }
     else 
@@ -129,26 +136,26 @@ double Danger::Age(unsigned int age) {
     double b3; 
     if (age >= 0 && age <= 20) // children & adolescents 
     {
-       // b3 = xxx; // assign value  
+        b3 = 0.015;
     }
     else if (age > 20 && age <= 30) // young adults 
     {
-        // b3 = xxx; // assign value 
+        b3 =  0.07;
     }
     else if (age > 30 && age <= 60) // middle age
     {
-        // b3 = xxx; // assign value 
+        b3 = 0.17;
     }
     else if (age > 60 && age >= 80) // elderly 
     {
-        // b3 = xxx; // assign value 
+        b3 = 0.24;
     }
     else 
     {
         // assumes age is over 80, very old 
-        // b3 = xxx; // assign value 
+        b3 = .40;
     }
-    return b3; 
+    return b3 * .47; //age is weighted to be 47% of the total danger 
 }       
 
 // effects probability of being infected 
@@ -157,14 +164,16 @@ double Danger::Gender(char gender){
     double b4; 
     if (gender == 'f') 
     {
+        b4 = .10; //average death rate is 10% assuming undercountage
         // b4 = xxxx; // set value
     }
     else
     {
         // assume value is 'm' because of error checking 
+        b4 = .24; //men are 2.4 times more likely to die
         //b4 = xxx; // set value 
     }
-    return b4; 
+    return b4 * .03; //gender is weighted to be 3% of the total danger
 }
 
 // effects probability of being infected 
@@ -173,9 +182,13 @@ double Danger::medicalConditions(char conditions){
     // set comparison 
         if (conditions == 'y') // health condition is present  
         {
+            b5 = 0.40;
             // b5 = xxxx; // set value 
-        }   
-    return b5; 
+        }
+        else{
+            b5 = 0.01;
+        } 
+    return b5 * 0.50; //medical conditions is weighted to be 50% of the danger, 
 }
 
 // getters for danger 
