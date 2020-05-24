@@ -4,22 +4,35 @@
 #include <string>
 #include <ctype.h>
 #include <stdio.h>
+#include <cstdio>
+#include <vector>
 
 using namespace std;
+
+
+int searchVector(vector<string> states, string userInput){
+    for(int i = 0; i <states.size(); ++i){
+        if(states[i] == userInput){
+            return i;
+        }
+    }
+}
 int main()
 {
     int count = 0;
-    char *userInput;
-    char state[50] = {'AL', 'AK', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN' ,'IA', 'KS', 'KY', 'MA', 'ME', 'MD', 'MI', 'MN', 'MS', 'MO', 'MT' , 'NE', 'NV', 'NH' , 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'};
-    cout<< "Please enter the 2 digit state combination that you live in\n";
+    char userInput;
+    vector <string> states = {'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN' ,'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT' , 'NE', 'NV', 'NH' , 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'};
+    cout << "Please enter the 2 digit state combination that you live in\n";
     cin >> userInput;
-    toupper(*userInput);
-    for(int i = 0; i < 50; i++){
+    toupper(userInput);
+    searchVector(states, userInput);
+
+    /*for(vector<string>::iterator t=states.begin(); t!=states.end(); ++t){
         count+=1; // the first case is case 1
-        if(*userInput == state[i]){
+        if(userInput == states.at(t)){
             break;
         }
-    }
+    }*/
    
     const double case_rate = 5038; //cases per 1 million people
     double rate;
