@@ -2,11 +2,13 @@
 #define LIB_H
 #include <string>
 
+
+
 class Exposure{
     //Everything returned as a type double, as all this data is to be combined into a point-driven formula to compute a single percentage
     private:
     //location will be a string 
-        double location(string state); 
+        double location(std::string state); 
             // takes location from state abbreviation
         double outsideHouse(double hours); //will be a double, and will take in both hours and minutes, perhaps seconds
         double interactions(unsigned int interactions); //asking the user how many interactions he/she has had
