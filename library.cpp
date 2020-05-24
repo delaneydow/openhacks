@@ -49,7 +49,7 @@ double Exposure::spreadRate() {
     // based on # of hours spent outside the house 
     // output is k = "average number of daily exposures of the latent"
 double Exposure::Interactions(unsigned int hours, unsigned int interactions){
-    double k =  (double) hours / interactions;  // cast to be type double   
+    double k =  (double) interactions / hours;  // cast to be type double   
     return k;
 }
 
@@ -231,10 +231,10 @@ double Test::Industry(char industry)
     double b6 = 1.0;
     // double Test::getindustry() { // don't think you'd need a getter since test class can access data within its class
     if(industry == 'y'){
-        b6 *= .116; // this is how much more likely front line workers are compared to normal people
+        b6 *= 1.116; // this is how much more likely front line workers are compared to normal people
     }
     else{
-        b6 *=.01; 
+        b6 *=1
     }
         
     return b6; // exits function 
@@ -256,7 +256,7 @@ Test:: ~Test()
     //default constructor 
 }
 
-double Analysis::exposureAnalysis() {
+double Analysis::exposureAnalysis(double b1, double b2, double k) {
 
 /*double Exposure::getlocation()
     double Exposure::getoutsideHouse()
@@ -268,9 +268,7 @@ double Analysis::exposureAnalysis() {
 
 */ 
    // double test = Exposure.k; 
-
-   double exposureResult = 1.0; 
-    
+    double exposureResult = (b1 + b2) * k/24; 
     return exposureResult; 
 
 
@@ -278,13 +276,13 @@ double Analysis::exposureAnalysis() {
 
 
 
-double Analysis::dangerAnalysis(){
+double Analysis::dangerAnalysis(double b3, double b4, double b5){
     /*
     double Danger:getAge() // return b3
     double Danger:getGender() // return b4
     double Danger:getConditions() // return b5
     */ 
-    double dangerResult = 1.0; 
+    double dangerResult = b3 + b4 + b5;
     return dangerResult; 
 }
 
