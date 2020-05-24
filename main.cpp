@@ -62,19 +62,19 @@ while (userInput != 'q')
 		cout << "Enter the type of interactions you have with others. \na if you wear a mask whenever outside of your home \nx is you maintain a social distance of six feet when outside of your home\nu if you have quarantined and do not go outside of your home" << endl; 
 		cin >> protections; 
 		// error checking 
-		while (protections != 'a' || protections != 'x' || protections != 'u') 
+		while (protections != 'a' && protections != 'x' && protections != 'u') 
 		{
 			cout << "Invalid character! Please enter a valid character..." << endl; 
 			cin >> protections; 
-		}
+		} 
 
 		cout << "Enter your living situation that is most applicable. \np if you live in an apartment\nb if you live in a suburban area \nr if you live in a rural area" << endl; 
 		cin >> living; 
-		while (living != 'p' || living != 'b' || living != 'r') 
+		while (living != 'p' && living != 'b' && living != 'r') 
 		{
 			cout << "Invalid character! Please enter a valid character..." << endl; 
 			cin >> living; 
-		}
+		} 
 
 		// invoke library to deal with exposure model 
 
@@ -97,7 +97,7 @@ while (userInput != 'q')
 		cin >> gender; 
 		tolower(gender); 
 		// error checking 
-		while (gender != 'm' || gender != 'f') 
+		while (gender != 'm' && gender != 'f') 
 		{
 			cout << "Invalid character! Enter m for male of f for female" << endl; 
 			cin >> gender; 
@@ -115,7 +115,7 @@ while (userInput != 'q')
 			//error checking, make coditions string all lowercase 
 		tolower(conditions); 
 		
-		while(conditions != 'y' || conditions != 'n')
+		while(conditions != 'y' && conditions != 'n')
 		{
 			//this error check needs to be fixed. 
 			cout << "Please enter yes or no.\n";
@@ -146,7 +146,7 @@ while (userInput != 'q')
 		cin >> industry; 
 		tolower(industry); 
 		// error checking 
-		if (industry != 'y' || industry != 'n') 
+		if (industry != 'y' && industry != 'n') 
 		{
 			cout << "Invalid character! Enter y for yes or n for no." << endl; 
 			cin >> industry; 
@@ -172,7 +172,7 @@ while (userInput != 'q')
 	{
 		case 'e': 
 		{
-			double eResult = Analysis::exposureAnalysis(precuations, living);
+			double eResult = Analysis::exposureAnalysis(protections, living);
 			cout << "Thank you for selecting the exposure model" << endl; 
 			cout << "The likelihood of you being exposed to covid-19 is..." << eResult << endl; // take results from calculations
 
@@ -183,8 +183,8 @@ while (userInput != 'q')
 		{
 			double sResult = Analysis::dangerAnalysis(age, gender, conditions); 
 			cout << "Thank you for selecting the severity model" << endl; 
-			// cout << "The likelihood of your case being asymptomatic is..." << endl; // results from calculations
-			cout << "The likelihood that your case would be critical or severe is...." << sResult << endl; // results from calculations
+			// cout << "The likelihood of your case being asymptomatic is..." <<  <<  endl; // results from calculations
+			cout << "The likelihood that your case would be critical or sever is...." << sResult<< endl; // results from calculations
 			
 			
 			break; 
@@ -192,10 +192,10 @@ while (userInput != 'q')
 
 		case 't': 
 		{
-			double tResult = Analysis::testAnalysis(industry, age);
+			double tResult = Analysis::testAnalysis(industry, age); 
 			cout << "Thank you for selecting the testing model" << endl; 
-			cout << "You should be tested for covid-19 apprximately << tResult << times per week" << endl; // results from calculations
-
+			cout << "You should be tested for covid-19 apprximately " << tResult << " times per week" << endl; // results from calculations
+			
 			break; 
 		}
 		default: 
