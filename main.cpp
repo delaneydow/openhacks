@@ -1,6 +1,6 @@
 // include guards 
 #include <iostream>
-// #include "library.h" 
+#include "library.h" 
 #include <string>
 #include <locale>
 #include <algorithm>
@@ -14,8 +14,7 @@ int main()
 
 // declare variables 
 char userInput, gender, protections, living, industry; 
-unsigned int interactions, age; 
-double hours;  
+unsigned int interactions, age, hours; 
 string state, conditions; 
 
 // begin program
@@ -111,11 +110,20 @@ while (userInput != 'q')
 			cout << condition_list[i] << "\n";
 		}
 			cout <<"If you have any type of these medical conditions\nPlease type yes or no\n" << endl; 
-
-		while(conditions[0] != 'y' || conditions[0] != 'n'){
+			
+			cin >> conditions; 
+			//error checking, make coditions string all lowercase 
+		transform(state.begin(), state.end(), state.begin(), ::tolower);
+		
+		while(conditions[0] != "yes" || conditions[0] != "no")
+		{
 			//this error check needs to be fixed. 
 			cout << "Please enter yes or no.\n";
 			cin >> conditions;
+			
+			//error checking, make coditions string all lowercase 
+		transform(state.begin(), state.end(), state.begin(), ::tolower);
+		}
 
 		// invoke library to deal with severity model 
 		break; 
