@@ -273,7 +273,7 @@ double Analysis::exposureAnalysis(double b1, double b2, double k) {
 
 
 }
-//ch
+
 
 
 double Analysis::dangerAnalysis(double b3, double b4, double b5){
