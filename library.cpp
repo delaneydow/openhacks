@@ -6,6 +6,11 @@
 
 using namespace std;
 
+Exposure::Exposure() 
+{
+    //default constructor 
+}
+
 double Exposure::location(string location){
 
 //need to take the users location and search for the state in the curl return data file with a for loop
@@ -122,14 +127,17 @@ double Exposure::getLiving()
 {
     return b2; 
 }
-
-
-// implementation of Danger class 
-
-    // implement danger object 
-    // Danger::Danger();   // needs exception ...?
+Exposure:: ~Exposure () 
+{
+    cout <<"Exposure destructed." << endl; 
+}
 
 // effects probability of being infected 
+Danger::Danger() 
+{
+    //default constructor 
+}
+
 double Danger::Age(unsigned int age) {
 // declare output variable 
     // double Danger::getAge(); // don't think you need this 
@@ -207,9 +215,16 @@ double Danger::getConditions()
     return b5; 
 }
 
+Danger:: ~Danger() 
+{
+    cout << "Danger destructed" << endl; 
+} 
+
 // implementation of Test class 
-    // initialize test object 
-    // Test::Test() ; 
+ Test:: Test() 
+{
+    //default constructor 
+}
 
 double Test::Industry(char industry)
 {
@@ -230,9 +245,16 @@ double Test::getIndustry()
     return b6;
 } 
 
+Test:: ~Test()
+{
+    cout << "Test destructed." << endl; 
+}
+
 // implementation of Analysis class 
-    // initialize default constructor
-    // Analysis::Analysis() ; 
+ Analysis:: Analysis()
+{
+    //default constructor 
+}
 
 double Analysis::exposureAnalysis() {
 
@@ -298,4 +320,10 @@ double Analysis::testAnalysis(char industry, unsinged int age){
         testResult = 0.0; 
     
     return testResult;    
+}
+
+Analysis:: ~Analysis()
+{
+    // destructor 
+    cout << "Analysis destructed." << endl; 
 }
