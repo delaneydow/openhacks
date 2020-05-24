@@ -104,7 +104,7 @@ while (userInput != 'q')
 			cin >> gender; 
 			tolower(gender); 
 		}
-    	string conditions;
+    	
     	string condition_list[8] = {"Chronic lung disease", "Asthma", "Heart conditions", "Immune Deficiencies", 
 		"Obesity", "Diabetes", "Chronic kidney disease", "Liver disease"};
 		for(int i = 0; i < sizeof(condition_list)/ sizeof(condition_list[0]) ; i++){
